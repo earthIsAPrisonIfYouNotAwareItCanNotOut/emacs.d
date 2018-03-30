@@ -122,7 +122,7 @@
   (require 'init-spelling))
 
 (require 'init-misc)
-
+(require 'init-evil)
 (require 'init-folding)
 (require 'init-dash)
 
