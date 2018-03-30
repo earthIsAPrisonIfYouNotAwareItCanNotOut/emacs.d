@@ -5,11 +5,11 @@
 (maybe-require-package 'prettier-js)
 
 (defcustom preferred-javascript-mode
-  (first (remove-if-not #'fboundp '(js2-mode js-mode)))
+  (first (remove-if-not #'fboundp '(rjsx-mode js2-mode js-mode)))
   "Javascript mode to use for .js files."
   :type 'symbol
   :group 'programming
-  :options '(js2-mode js-mode))
+  :options '(rjsx-mode js2-mode js-mode))
 
 (defconst preferred-javascript-indent-level 2)
 
@@ -49,6 +49,16 @@
 
 
 (add-to-list 'interpreter-mode-alist (cons "node" preferred-javascript-mode))
+
+;; rjsx-mode
+(require-package 'rjsx-mode)
+(add-hook 'rjsx-mode-hook
+          (lambda ()
+            (setq emmet-expand-jsx-className? t)
+            (setq indent-tabs-mode nil)
+            (setq js-indent-level 2)
+            (setq js2-strict-missing-semi-warning nil)))
+(add-hook 'rjsx-mode-hook #'aggressive-indent-mode)
 
 
 
