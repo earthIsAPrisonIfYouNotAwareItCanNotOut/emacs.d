@@ -6,6 +6,11 @@
 
 (add-auto-mode 'html-mode "\\.\\(jsp\\|tmpl\\)\\'")
 
+(require-package 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode)
+(add-hook 'js2-mode-hook  'emmet-mode)
+
 ;; Note: ERB is configured in init-ruby
 
 (provide 'init-html)
