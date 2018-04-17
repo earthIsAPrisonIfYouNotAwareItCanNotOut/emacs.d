@@ -55,7 +55,6 @@
             (setq indent-tabs-mode nil)
             (setq js-indent-level 2)
             (setq js2-strict-missing-semi-warning nil)))
-(add-hook 'rjsx-mode-hook #'aggressive-indent-mode)
 
 ;; json-mode
 (add-hook 'json-mode-hook #'aggressive-indent-mode)
