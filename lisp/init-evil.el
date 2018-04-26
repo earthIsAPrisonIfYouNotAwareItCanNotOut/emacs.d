@@ -81,16 +81,9 @@
 ;; make regular expression a vim like
 (setq evil-ex-search-vim-style-regexp t)
 
-;; scroll page
-(define-key evil-normal-state-map (kbd "C-k") (lambda ()
-                                                (interactive)
-                                                (evil-scroll-up 0)))
-(define-key evil-normal-state-map (kbd "C-j") (lambda ()
-                                                (interactive)
-                                                (evil-scroll-down 0)))
-
-;; redo
-(define-key evil-normal-state-map (kbd "C-r") 'undo-tree-redo)
+;; make a vim half page up/down like
+(define-key evil-normal-state-map (kbd "C-k") 'evil-scroll-up)
+(define-key evil-normal-state-map (kbd "C-j") 'evil-scroll-down)
 
 ;; paste in a ring with system clipboard
 (fset 'evil-visual-update-x-selection 'ignore)
